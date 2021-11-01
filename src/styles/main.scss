@@ -1,0 +1,31 @@
+
+
+@import 'abstracts/mixins';
+@import "abstracts/variables";
+
+// Core files
+@import 'core/normalize';
+
+
+// Layout
+@import 'layout/grid';
+
+// responsive 
+@import 'responsive/mixins';
+
+html {
+    
+    font-family: var(--pf-font-family);
+    font-size: var(--pf-fs-400);
+    font-weight: var(--pf-font-weight-xsm);
+    scrollbar-width: thin;
+    
+}
+
+
+body {
+    // background-color: var(--pf-bg-color);
+    // color: var(--pf-paragraph-color);
+    // line-height: 1.5rem;
+    letter-spacing: 1px;
+}

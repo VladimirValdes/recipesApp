@@ -1,0 +1,125 @@
+
+
+
+@mixin cssvars($css_variables, $prefix: pf) {
+    :root {
+        @each $name, $value in $css_variables {
+            --#{$prefix}-#{$name}: #{$value};
+        }
+    }
+}
+
+
+// ======MENU🍔====
+
+@mixin base-menu (){
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-left: 0;
+    background-color: var(--pf-secondary-color);
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+@mixin hamburger-icon($width, $height, $bg) {
+    
+    @content;
+    
+    position: relative;
+
+    width: $width;
+    height: $height;
+    
+    border-radius: $height / 2;
+
+    background-color: $bg;
+
+    &:before, &:after {
+        
+        content: '';
+
+        position: absolute;
+        top: -.9em;
+
+        display: block; 
+        width: $width;
+        height: $height;
+
+        background-color: $bg;
+        border-radius: $height / 2;
+        
+        transition: transform .2s;
+
+    }
+
+    &:after {
+        top: .9em;
+    }
+
+}
+
+@mixin close-icon($bg){
+    
+    @content;
+   
+    height: 0;  
+    
+    &:before, &:after {
+        background-color:$bg;
+
+
+        top: 0; 
+        transform: rotate(-45deg);
+
+    }
+
+    &:after {
+        transform: rotate(45deg);
+    }
+}
+
+
+
+@mixin button-hambuger() {
+
+    z-index: 10;
+   
+   
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       width: 65px;
+       padding: 16px;
+       background-color: transparent;
+       border: none;
+   
+       cursor: pointer;
+}
+
+
+@mixin  base-button($color, $w, $fs) {
+
+    @content;
+
+    padding: 16px 8px;
+    font-size: $fs;
+    font-weight: $w;
+    color: $color;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,221,214,1) 0%, rgba(51,102,255,1) 90% );
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+}
