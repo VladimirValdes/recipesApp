@@ -1,7 +1,7 @@
 
 @include cssvars((
     // colors
-    primary-color: #9da2b1,
+    primary-color: #7c8396,
     secondary-color: #c2c5cd,
     tertiary-color: #0f0f2c,
     highlight-color:#2dc76d,
@@ -11,8 +11,7 @@
     paragraph-color:#c2c5cd,
     buttontext-color: #ffffff,
     button-color:#2dc76d,
-    // #eaf9ef soft card color
-
+    
     // typopraphy
     font-family: #{'Roboto', sans-serif},
     font-titles: #{'Roboto Slab', serif},
@@ -20,22 +19,23 @@
     fs-600: 1.95rem,
     fs-500: 1.56rem,
     fs-400: 1.25rem,
-
-    font-weight-xsm: 300
+    
+    font-weight-xsm: 300,
     font-weight-sm: 400,
     font-weight-md: 500,
     font-weight-lg: 700,
     font-weight-xl: 800,
-
     
-));
+    
+    ));
+    
+    // #eaf9ef soft card color
 
-
-@media (min-width: 40em) {
+@media (min-width: 43em) {
     @include cssvars((
     // typography
     
-    fs-xl: 5rem,
+    fs-xl: 4rem,
     fs-600: 2.44rem,
     fs-500: 1.95rem,
     fs-400: 1.56rem,

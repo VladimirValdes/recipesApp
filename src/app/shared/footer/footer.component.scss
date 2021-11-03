@@ -1,0 +1,13 @@
+.footer {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #eaf9ef;
+
+    &__author {
+        text-align: center;
+        font-size: var(--pf-fs-600);
+        font-weight: var(--pf-font-weight-md);
+        color: var(--pf-tertiary-color);
+
+    }
+}

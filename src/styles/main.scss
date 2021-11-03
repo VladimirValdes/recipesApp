@@ -11,12 +11,10 @@
 @import 'layout/grid';
 
 // responsive 
-@import 'responsive/mixins';
 
 html {
-    
+    font-size: 65.5%;
     font-family: var(--pf-font-family);
-    font-size: var(--pf-fs-400);
     font-weight: var(--pf-font-weight-xsm);
     scrollbar-width: thin;
     
@@ -24,7 +22,9 @@ html {
 
 
 body {
-    // background-color: var(--pf-bg-color);
+    
+    font-size: var(--pf-fs-400);
+    background-color: var(--pf-bg-color);
     // color: var(--pf-paragraph-color);
     // line-height: 1.5rem;
     letter-spacing: 1px;

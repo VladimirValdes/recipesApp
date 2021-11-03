@@ -16,15 +16,15 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    right: 0;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
     padding-left: 0;
-    background-color: var(--pf-secondary-color);
+    padding: 0 1.5rem;
+    
+    background-color: var(--pf-tertiary-color);
     opacity: 0;
     visibility: hidden;
 }
@@ -72,6 +72,7 @@
     
     @content;
    
+    z-index: 10;
     height: 0;  
     
     &:before, &:after {
@@ -92,9 +93,6 @@
 
 @mixin button-hambuger() {
 
-    z-index: 10;
-   
-   
        display: flex;
        flex-direction: column;
        align-items: center;

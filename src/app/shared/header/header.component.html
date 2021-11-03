@@ -1,28 +1,31 @@
-<header class="header">
+<header 
+    class="header"
+    [ngClass]="{'header--active': activeM}">
     <nav class="navbar">
 
-        <div class="brand-container">
-            <a routerLink="/home" class="brand">
-                Tasty Recipes
-            </a>
-        </div>
+        <a  
+            class="brand"
+            [ngClass]="{'brand--active': activeM}">
+            Tasty Recipes
+        </a>
 
         <button 
-             class="icon-menu">
+             class="icon-menu"
+             (click)="activeMenu()">
             <span
-                ngClass]="{'icon-menu__bar--active': activeMenu}"
-                class="icon-menu__bar">
+                class="icon-menu__bar"
+                [ngClass]="{'icon-menu__bar--active': activeM}">
             </span>
         </button>
 
-        
-
-        <ul class="menu">
+        <ul 
+            class="menu"
+            [ngClass]="{'menu--active': activeM}">
             <li class="menu__item"><a class="menu__link">Home</a></li>
             <li class="menu__item"><a class="menu__link">Discover</a></li>
             <li class="menu__item"><a class="menu__link">Categories</a></li>
         </ul>
-
+<!-- 
         <div class="search-input">
             <button class="search-input__btn">
                 <img src="/assets/icons/search.svg" class="icon-search" alt="search">
@@ -35,7 +38,7 @@
                 aria-label="Search"
                 #term>  
               
-        </div>
+        </div> -->
         
     </nav>
 </header>

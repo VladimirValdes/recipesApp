@@ -9,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+
+  activeM = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  activeMenu(): void {
+    this.activeM = !this.activeM;
   }
 
 }
