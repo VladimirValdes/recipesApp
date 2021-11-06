@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-card-dish',
   templateUrl: './card-dish.component.html',
-  styles: [
+  styleUrls: [
+    './card-dish.component.scss'
   ]
 })
 export class CardDishComponent implements OnInit {
