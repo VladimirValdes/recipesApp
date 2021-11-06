@@ -14,6 +14,11 @@ import { CardRecipeComponent } from './card-recipe/card-recipe.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    CardCategoryComponent,
+    CardDishComponent,
+    CardRecipeComponent
   ]
 })
 export class ComponentsModule { }
