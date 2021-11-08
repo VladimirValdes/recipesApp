@@ -1,13 +1,13 @@
 
 .recipes-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px),300px));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
     justify-content: space-evenly;
     width: 100%;
-    max-width: 1124px;
+    margin: 0 auto;
     padding: 2rem 1rem;
-    // padding-bottom: 2rem;
     gap: 1rem;
+
 
 }
 
@@ -32,7 +32,7 @@
         position: absolute;
         right: 0;
         left: 0;
-        top: 20rem;
+        bottom: 1rem;
 
         display: flex;
         flex-direction: column;
@@ -49,16 +49,17 @@
     
     &__name {
         font-family: var(--pf-font-titles);
-        font-size: var(--pf-fs-600);
-        font-weight: var(--pf-font-weight-lg);
+        font-size: var(--pf-fs-400);
+        font-weight: var(--pf-font-weight-md);
         color: var(--pf-tertiary-color);
-        margin-bottom: 1rem;
-        margin-top: 1rem;
+        // margin-bottom: 1rem;
+        // margin-top: 1rem;
+        text-align: center;
     }
 
     &__category {
         position: absolute;
-        bottom: 5.5rem;
+        top: -2rem;
 
         display: flex;
         align-items: center;

@@ -1,0 +1,111 @@
+
+
+.wrapper {
+    background-image: url('/assets/images/backgroundFood.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.section-area, .section-recipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem 1rem;
+    padding-top: 6rem;
+    margin: 0 auto;
+
+}
+
+.section-recipe {
+    max-width: 100%;
+}
+
+.section {
+    
+  
+    // margin-top: 4rem;
+
+    &__title {
+        font-family: var(--pf-font-titles);
+        font-size: var(--pf-fs-700);
+        font-weight: var(--pf-font-weight-lg);
+        color: var(--pf-tertiary-color);
+        text-align: center;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+    &__subtitle {
+        font-size: var(--pf-fs-500);
+        font-weight: var(--pf-font-weight-sm);
+        color: var(--pf-primary-color);
+        text-align: center;
+        margin: 0;
+    }
+
+    &__areas__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(125px, 160px));
+        justify-content: space-evenly;
+        width: 100%;
+        padding-left: 0;
+        padding: 1rem;
+        // padding-bottom: 2rem;
+        gap: 1rem;
+    }
+
+    &__areas__item {
+        border: 1px solid var(--pf-primary-color);
+        border-radius: 5px;
+        padding: 1rem 0.5rem;
+    }
+
+    &__areas__link {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: var(--pf-fs-500);
+        font-weight: var(--pf-font-weight-md);
+        color: var(--pf-primary-color);
+        margin: 0;
+    }
+
+    &__areas__img {
+        width: 100%;
+        max-width:  50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__btn {
+        padding: 16px 10px;
+        font-size: var(--pf-fs-500);
+        font-weight: var(--pf-font-weight-md);
+        color: white;
+        background-color: var(--pf-highlight-color);
+        border: none;
+        border-radius: 5px;
+        letter-spacing: 1px;
+    
+        cursor: pointer;
+
+        &:hover {
+            background-color: transparent;
+            border: 1px solid var(--pf-highlight-color);
+            color: var(--pf-primary-color);
+        }
+    }
+
+    &__container {
+        width: 100%;
+    }
+
+
+
+}

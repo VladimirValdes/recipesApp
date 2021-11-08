@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CategoriesRoutingModule } from './categories-routing.module';
 import { CategoriesComponent } from './categories.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { CategoriesComponent } from './categories.component';
   ],
   imports: [
     CommonModule,
-    CategoriesRoutingModule
+    CategoriesRoutingModule,
+    ComponentsModule
   ]
 })
 export class CategoriesModule { }

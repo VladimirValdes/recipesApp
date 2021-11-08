@@ -3,9 +3,12 @@
 
 
 .header {
+    position: fixed;
+    width: 100%;
     padding: 1rem 1.5rem;
     background-color: var(--pf-tertiary-color);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    z-index: 30;
 
     &--active {
         background-color: transparent;
@@ -49,6 +52,11 @@
                 font-size: var(--pf-fs-500);
                 font-weight: var(--pf-font-weight-sm);
                 cursor: pointer;
+
+                &--active {
+                    color: var(--pf-highlight-color);
+
+                }
         
                 &:hover {
                     color: var(--pf-highlight-color);

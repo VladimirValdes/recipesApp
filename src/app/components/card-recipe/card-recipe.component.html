@@ -1,12 +1,13 @@
 <div class="recipes-container">
-    <article class="recipe">
-        <img src="https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg" alt="meal" class="recipe__img">
+    <article class="recipe"
+        *ngFor="let recipe of recipes">
+        <img [src]="recipe.strMealThumb" [alt]="recipe.strMeal" class="recipe__img">
         <section class="recipe__info">
             <a href="#" class="recipe__category">
                 <span class="recipe__icon"></span>
-                Chicken
+                {{ recipe.strCategory }}
             </a> 
-            <h3 class="recipe__name">Apam balik</h3>
+            <h3 class="recipe__name">{{ recipe.strMeal }}</h3>
         </section>
     </article>
     
