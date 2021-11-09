@@ -10,7 +10,7 @@
     max-width: 1124px;
     margin: 0 auto;
     margin-top: 60px;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
 
      &__title {
         font-family: var(--pf-font-titles);
@@ -36,7 +36,6 @@
         grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 350px));
         justify-content: space-evenly;
         width: 100%;
-        padding: 0 1rem;
         padding-bottom: 2rem;
         gap: 1rem;
 
@@ -60,27 +59,21 @@
     align-items: center;
     border: 2px solid var(--pf-secondary-color);
     border-radius: 10px;
-    padding: 1rem;
+    padding: 0 1rem;
     width: 100%;
 
     
 
     &__img {
         width: 100%;
-        max-width: 275px;
+        max-width: 250px;
         height: auto;
         object-fit: cover;
         object-position: center;
         border-radius: 10px;
     }
 
-    // &__info {
-
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: center;
-    //     align-items: center;
-    // }
+ 
 
     &__name {
         font-size: var(--pf-fs-600);
@@ -91,17 +84,11 @@
         margin-left: 1rem;
     }
 
-    // &__desc {
-    //     margin-bottom: 0;
-    //     font-size: var(--pf-fs-500);
-    //     font-weight: var(--pf-font-weight-sm);
-    //     color: var(--pf-primary-color);
-    //     text-align: center;
-    // }
+   
 
     @include respond-between(xs, xmd) {
         justify-content: flex-end;
-        height: 215px;
+        height: 190px;
 
 
         &__img {
@@ -112,7 +99,7 @@
 
     @include respond-above(md) {
         justify-content: flex-end;
-        height: 215px;
+        height: 190px;
 
 
         &__img {

@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
-import { SharedModule } from 'src/app/shared/shared.module';
 import { HomeComponent } from './home.component';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { BannerModule } from 'src/app/shared/banner/banner.module';
+import { CardRecipeModule } from 'src/app/components/card-recipe/card-recipe.module';
 
 
 @NgModule({
@@ -14,8 +14,8 @@ import { ComponentsModule } from 'src/app/components/components.module';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule,
-    ComponentsModule
+    BannerModule,
+    CardRecipeModule
   ]
 })
 export class HomeModule { }

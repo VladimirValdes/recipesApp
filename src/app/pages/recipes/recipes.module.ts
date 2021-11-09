@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RecipesRoutingModule } from './recipes-routing.module';
 import { RecipesComponent } from './recipes.component';
+import { BannerPerPageModule } from 'src/app/shared/banner-per-page/banner-per-page.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { RecipesComponent } from './recipes.component';
   ],
   imports: [
     CommonModule,
-    RecipesRoutingModule
+    RecipesRoutingModule,
+    BannerPerPageModule
   ]
 })
 export class RecipesModule { }

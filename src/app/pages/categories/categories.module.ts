@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { CategoriesRoutingModule } from './categories-routing.module';
 import { CategoriesComponent } from './categories.component';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { CardCategoryModule } from 'src/app/components/card-category/card-category.module';
+import { BannerPerPageModule } from 'src/app/shared/banner-per-page/banner-per-page.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ComponentsModule } from 'src/app/components/components.module';
   imports: [
     CommonModule,
     CategoriesRoutingModule,
-    ComponentsModule
+    CardCategoryModule,
+    BannerPerPageModule
   ]
 })
 export class CategoriesModule { }

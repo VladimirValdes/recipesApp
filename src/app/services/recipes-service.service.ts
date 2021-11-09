@@ -11,6 +11,8 @@ import { Recipes, Meal as MealR } from '../interfaces/recipes.interface';
 })
 export class RecipesServiceService {
 
+  areas: Meal[] = [];
+
   baseUrl = 'https://www.themealdb.com/api/json/v1/1';
 
   // www.themealdb.com/api/json/v1/1/list.php?a=list
@@ -31,6 +33,7 @@ export class RecipesServiceService {
     return this.http.get< Areas >(`${ this.baseUrl}/list.php?a=list`)
                       .pipe(
                           map( recipe  => {
+                            this.areas = recipe.meals;
                              return recipe.meals;
                           })
                       )

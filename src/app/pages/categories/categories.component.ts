@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
+  banner = {
+    title: "Our Categories",
+    desc: "Filter recipes throught differents categories that we have for you."
+  }
   constructor() { }
 
   ngOnInit(): void {

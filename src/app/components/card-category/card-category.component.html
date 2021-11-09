@@ -1,12 +1,5 @@
 
 <section class="categories">
-    <h2 class="categories__title">
-       Our Categories
-    </h2>
-    <p class="categories__desc">
-        Filter recipes throught differents categories that we have for you!
-    </p>
-
     <div class="categories__container">
         <article class="category" *ngFor="let category of categories">
             <img [src]="category.strCategoryThumb" [alt]="category.strCategory" class="category__img">

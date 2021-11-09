@@ -1,1 +1,22 @@
-<p>discover works!</p>
+<app-banner-per-page [banner]="banner"></app-banner-per-page>
+
+    <section class="section-area">
+        <h2 class="section__title">Recipes by Country</h2>
+        <p class="section__subtitle">Choose a country and discover different recipes</p>
+    
+        <ul class="section__areas__list"
+           >
+            <li class="section__areas__item"
+
+            *ngFor="let area of areas; let i = index ">
+                <a 
+                  href="#" 
+                  class="section__areas__link">
+                    <img src="/assets/areas/{{ area.strArea }}.png" alt="American"  class="section__areas__img">
+                    {{ area.strArea }}
+                </a>
+            </li>
+            
+        </ul>
+        
+    </section>

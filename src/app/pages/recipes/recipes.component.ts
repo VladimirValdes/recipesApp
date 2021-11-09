@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipesComponent implements OnInit {
 
+  banner = {
+    title: "Recipes",
+    desc: "You don't what to cook today, don't worry let's choose a recipe."
+  }
+
   constructor() { }
 
   ngOnInit(): void {
