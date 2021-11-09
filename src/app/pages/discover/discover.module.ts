@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DiscoverRoutingModule } from './discover-routing.module';
 import { DiscoverComponent } from './discover.component';
 import { BannerPerPageModule } from 'src/app/shared/banner-per-page/banner-per-page.module';
+import { IngredientModule } from 'src/app/components/ingredient/ingredient.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { BannerPerPageModule } from 'src/app/shared/banner-per-page/banner-per-p
   imports: [
     CommonModule,
     DiscoverRoutingModule,
-    BannerPerPageModule
+    BannerPerPageModule,
+    IngredientModule
   ]
 })
 export class DiscoverModule { }

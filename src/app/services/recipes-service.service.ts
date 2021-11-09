@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Categories, Category } from '../interfaces/categories.interface';
 import { Areas, Meal } from '../interfaces/areas.interface';
 import { Recipes, Meal as MealR } from '../interfaces/recipes.interface';
+import { Ingredients, Meal as MealI } from '../interfaces/ingredients.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ import { Recipes, Meal as MealR } from '../interfaces/recipes.interface';
 export class RecipesServiceService {
 
   areas: Meal[] = [];
+  ingredients: MealI[] = [];
 
   baseUrl = 'https://www.themealdb.com/api/json/v1/1';
 
@@ -37,6 +39,16 @@ export class RecipesServiceService {
                              return recipe.meals;
                           })
                       )
+  }
+
+  getAllIngredients(): Observable< MealI []> {
+    return this.http.get< Ingredients >(`${ this.baseUrl}/list.php?i=list`)
+                    .pipe(
+                        map( ingredients  => {
+                          this.ingredients = ingredients.meals;
+                          return ingredients.meals;
+                        })
+                    )
   }
 
   filterByLetter( term = 'a'): Observable< MealR[] > {

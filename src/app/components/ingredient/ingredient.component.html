@@ -1,0 +1,20 @@
+<section class="ingredients">
+
+    <h2 class="ingredients__title">
+        Ingredients
+    </h2>
+    <p class="ingredients__desc">
+        Discover recipices by your favorite ingredients.
+    </p>
+    <ul class="ingredients__list">
+        <li class="ingredients__item"
+            *ngFor="let ingredient of ingredients | slice:0:4">
+            <a href="#" class="ingredients__link">
+                <img src="https://www.themealdb.com/images/ingredients/{{ ingredient.strIngredient }}.png" 
+                     [alt]="ingredient.strIngredient"  
+                     class="ingredients__img">
+                     {{ ingredient.strIngredient }}
+            </a>
+        </li>
+    </ul>
+</section>
