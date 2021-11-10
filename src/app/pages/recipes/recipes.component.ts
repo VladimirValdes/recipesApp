@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Meal } from 'src/app/interfaces/recipes.interface';
+import { RecipesServiceService } from 'src/app/services/recipes-service.service';
 
 @Component({
   selector: 'app-recipes',
@@ -12,9 +14,16 @@ export class RecipesComponent implements OnInit {
     desc: "You don't what to cook today, don't worry let's choose a recipe."
   }
 
-  constructor() { }
+  recipes: Meal[] = [];
+
+
+  constructor( private recipeService: RecipesServiceService) { }
 
   ngOnInit(): void {
+    this.recipeService.filterByLetter( "b" ).subscribe( recipes => {
+      this.recipes = recipes;
+      console.log( this.recipes );
+    })
   }
 
 }

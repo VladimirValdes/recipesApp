@@ -1,7 +1,7 @@
 
 <section class="categories">
     <div class="categories__container">
-        <article class="category" *ngFor="let category of categories">
+        <article class="category" *ngFor="let category of categories | slice:0:showOnly">
             <img [src]="category.strCategoryThumb" [alt]="category.strCategory" class="category__img">
             <section class="category__info">
                 <h3 class="category__name">{{ category.strCategory }}</h3>

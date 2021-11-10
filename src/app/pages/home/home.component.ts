@@ -12,6 +12,12 @@ export class HomeComponent implements OnInit {
 
   areas: Meal[] = [];
   recipes: MealR[] = [];
+  banner = {
+    title: "Simple and Tasty Juice Recipes",
+    desc: " Want to learn cook but confused how to start? Let's check our recipes"
+  }
+
+  showOnly = 4;
   constructor(private recipeService: RecipesServiceService) { }
 
   ngOnInit(): void {

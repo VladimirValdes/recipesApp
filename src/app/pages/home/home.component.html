@@ -1,7 +1,41 @@
+<app-banner-per-page [banner]="banner"></app-banner-per-page>
+<section class="section-recipe">
+    <h2 class="section__title">Our Recipes</h2>
+    <p class="section__subtitle">Let's try new tastes and cook with us</p>
 
-<app-banner></app-banner>
+    <app-card-recipe [recipes]="recipes" class="section__container"></app-card-recipe>
 
-<div class="wrapper">
+   
+    <a href="#" class="section__btn">
+        View More
+    </a>
+</section>
+
+
+<section class="section-bg">
+    <img src="/assets/images/bg-eating.jpg" alt="banner" class="section-bg__img">
+    <div class="section-bg__info">
+        <h2 class="section-bg__title">
+            Choose from thousands of recipes
+        </h2>
+        
+    </div>
+
+</section>
+
+<section class="section-recipe">
+    <h2 class="section__title">Our Categories</h2>
+    <p class="section__subtitle">Filter recipes throught differents categories that we have for you.</p>
+
+    <app-card-category [showOnly]="showOnly" class="section__container"></app-card-category>
+
+   
+    <a href="#" class="section__btn">
+        View More
+    </a>
+</section>
+
+<!-- <div class="wrapper">
     <section class="section-area">
         <h2 class="section__title">Recipes by Country</h2>
         <p class="section__subtitle">Choose a country and discover different recipes</p>
@@ -20,16 +54,5 @@
             View More
         </a>
     </section>
-</div>
+</div> -->
 
-<section class="section-recipe">
-    <h2 class="section__title">Our Recipes</h2>
-    <p class="section__subtitle">Let's try new tastes and cook with us</p>
-
-    <app-card-recipe [recipes]="recipes" class="section__container"></app-card-recipe>
-
-   
-    <a href="#" class="section__btn">
-        View More
-    </a>
-</section>

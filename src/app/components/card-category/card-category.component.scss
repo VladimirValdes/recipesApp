@@ -37,7 +37,7 @@
         justify-content: space-evenly;
         width: 100%;
         padding-bottom: 2rem;
-        gap: 1rem;
+        gap: 1.5rem 1rem;
 
         @include respond-above(md) {
       
@@ -61,8 +61,13 @@
     border-radius: 10px;
     padding: 0 1rem;
     width: 100%;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
 
-    
+    &:hover {
+        transform: translateY(-1rem);
+        box-shadow: 2px 3px 18px rgba(255,255,255,0.4);
+    }
 
     &__img {
         width: 100%;
