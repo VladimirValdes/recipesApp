@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Meal } from 'src/app/interfaces/recipesBy.interface';
+import { RecipesServiceService } from 'src/app/services/recipes-service.service';
 
 @Component({
   selector: 'app-card-dish',
@@ -7,11 +9,58 @@ import { Component, OnInit } from '@angular/core';
     './card-dish.component.scss'
   ]
 })
-export class CardDishComponent implements OnInit {
+export class CardDishComponent implements  OnChanges {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  @Input() filter  = {
+      term: '',
+      filter: ''
   }
+
+  recipes: Meal[] = [];
+
+  constructor( private recipeService: RecipesServiceService) { }
+ 
+
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if ( changes.filter && changes.filter.currentValue ) {
+
+      console.log(this.filter );
+        this.filterBy(this.filter);
+    }
+  }
+
+  filterBy( { term = '', filter = '' }) {
+
+    console.log( term, filter );
+    switch ( filter ) {
+      case 'category':
+        console.log('entre')
+
+          this.recipeService.filterByCategory( term )
+              .subscribe( recipes => {
+
+                console.log( recipes )
+                 this.recipes = recipes;
+                 console.log( this.recipes )
+              });
+        break;
+      case 'ingredient':
+          this.recipeService.filterByIngredient( term )
+          .subscribe( recipes => {
+            this.recipes = recipes;
+          });
+        break;
+      case 'country':
+          this.recipeService.filterByArea( term )
+          .subscribe( recipes => {
+            this.recipes = recipes;
+          });
+        break;
+      default:
+        break;
+    }
+  }
+
 
 }

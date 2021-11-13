@@ -10,13 +10,12 @@
 
             *ngFor="let area of areas; let i = index ">
                 <a 
-                  href="#" 
+                  (click)="recipesBy( area )"
                   class="section__areas__link">
                     <img src="/assets/areas/{{ area.strArea }}.png" alt="American"  class="section__areas__img">
                     {{ area.strArea }}
                 </a>
             </li>
-            
         </ul>
         
     </section>

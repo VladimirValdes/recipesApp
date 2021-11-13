@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Category } from 'src/app/interfaces/categories.interface';
+
 import { RecipesServiceService } from 'src/app/services/recipes-service.service';
 
 @Component({
@@ -15,7 +17,8 @@ export class CardCategoryComponent implements OnInit {
   @Input() showOnly: number = 0;
 
 
-  constructor( private recipesService: RecipesServiceService) { }
+  constructor( private recipesService: RecipesServiceService,
+               private router: Router) { }
 
   ngOnInit(): void {
     this.recipesService.getAllCategories().subscribe( categories => {
@@ -26,6 +29,14 @@ export class CardCategoryComponent implements OnInit {
       }
       this.categories = categories;
     })
+  }
+
+  recipesBy( category: Category ) {
+
+    this.recipesService.category = category;
+    
+    this.router.navigateByUrl(`/recipesBy/category:${ category.strCategory }`);
+
   }
 
 }

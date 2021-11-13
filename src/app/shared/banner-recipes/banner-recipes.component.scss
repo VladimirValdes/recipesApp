@@ -1,0 +1,56 @@
+
+.banner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 9rem 1rem;
+    padding-bottom: 2rem;
+
+    background-image: url('/assets/images/bannerRecipes.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    &__imgContainer {
+        order: 2;
+        flex: 1 0 300px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin: 1rem;
+
+        
+    }
+
+    &__img {
+        order:1;
+        width: 100%;
+        max-width: 562px;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+    }
+
+    &__info {
+        flex: 1 0 320px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    &__title {
+        font-family: var(--pf-font-titles);
+        font-size: var(--pf-fs-xl);
+        font-weight: var(--pf-font-weight-xl);
+        color: var(--pf-bg-color);
+        text-align: center;
+
+        span {
+            margin-left: 0.5rem;
+            color: var(--pf-highlight-color);
+        }
+    }
+}

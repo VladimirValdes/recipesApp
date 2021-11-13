@@ -1,9 +1,10 @@
 
     <div class="dishes-container">
-        <article class="dish">
-            <img src="https://www.themealdb.com/images/media/meals/ryppsv1511815505.jpg" alt="meal" class="dish__img">
+        <article class="dish"
+            *ngFor="let recipe of recipes">
+            <img [src]="recipe.strMealThumb" [alt]="recipe.strMeal" class="dish__img">
             <section class="dish__info">
-                <h3 class="dish__name">BeaverTails</h3>
+                <h3 class="dish__name">{{ recipe.strMeal }}</h3>
             </section>
         </article>  
     </div>

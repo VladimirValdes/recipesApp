@@ -6,17 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-
-  alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  alphabetAr: string[] = [];
-
+  
   constructor() { }
 
-  ngOnInit(): void {
-
-    this.alphabetAr = this.alphabet.split('');
-
-  
-  }
+  ngOnInit(): void {}
 
 }

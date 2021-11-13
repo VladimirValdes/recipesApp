@@ -9,7 +9,8 @@
     <ul class="ingredients__list">
         <li class="ingredients__item"
             *ngFor="let ingredient of ingredients | slice:0:4">
-            <a href="#" class="ingredients__link">
+            <a class="ingredients__link"
+                (click)="recipesBy( ingredient )">
                 <img src="https://www.themealdb.com/images/ingredients/{{ ingredient.strIngredient }}.png" 
                      [alt]="ingredient.strIngredient"  
                      class="ingredients__img">

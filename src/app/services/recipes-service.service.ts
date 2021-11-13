@@ -6,6 +6,7 @@ import { Categories, Category } from '../interfaces/categories.interface';
 import { Areas, Meal } from '../interfaces/areas.interface';
 import { Recipes, Meal as MealR } from '../interfaces/recipes.interface';
 import { Ingredients, Meal as MealI } from '../interfaces/ingredients.interface';
+import { FilterRecipe, Meal as MealF } from '../interfaces/recipesBy.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +15,11 @@ export class RecipesServiceService {
 
   areas: Meal[] = [];
   ingredients: MealI[] = [];
+  category!: Category;
+  ingredient!: MealI;
+  area!: Meal;
 
   baseUrl = 'https://www.themealdb.com/api/json/v1/1';
-
-  // www.themealdb.com/api/json/v1/1/list.php?a=list
-  // www.themealdb.com/api/json/v1/1/search.php?f=a
 
   constructor( private http: HttpClient) { }
 
@@ -53,6 +54,36 @@ export class RecipesServiceService {
 
   filterByLetter( term = 'a'): Observable< MealR[] > {
     return this.http.get< Recipes >(`${ this.baseUrl}/search.php?f=${ term }`)
+                      .pipe(
+                          map( recipe  => {
+                             return recipe.meals;
+                          })
+                      )
+  }
+
+  filterByArea( term = ''): Observable< MealF[] > {
+    return this.http.get< FilterRecipe >(`${ this.baseUrl}/filter.php?a=${ term }`)
+                      .pipe(
+                          map( recipe  => {
+                             return recipe.meals;
+                          })
+                      )
+  }
+
+  filterByCategory( term: string ): Observable< MealF[] > {
+    console.log( term )
+    return this.http.get< FilterRecipe >(`${ this.baseUrl}/filter.php?c=${term}`)
+                      .pipe(
+                          map( recipe  => {
+                            console.log( recipe )
+
+                             return recipe.meals;
+                          })
+                      )
+  }
+
+  filterByIngredient( term = ''): Observable< MealF[] > {
+    return this.http.get< FilterRecipe >(`${ this.baseUrl}/filter.php?i=${ term }`)
                       .pipe(
                           map( recipe  => {
                              return recipe.meals;
