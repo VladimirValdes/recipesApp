@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Meal } from 'src/app/interfaces/recipes.interface';
 
 @Component({
@@ -12,9 +13,13 @@ export class CardRecipeComponent implements OnInit {
 
   @Input() recipes: Meal[] = []
 
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  showRecipe( id: string ) {
+    this.router.navigateByUrl(`/recipe/${id}`);
   }
 
 }

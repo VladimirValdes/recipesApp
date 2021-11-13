@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'recipesBy/:termino', loadChildren: () =>
         import('./pages/recipes-by/recipes-by.module').then( m => m.RecipesByModule )
   },
+  {
+    path: 'recipe/:id', loadChildren: () =>
+        import('./pages/recipe/recipe.module').then( m => m.RecipeModule )
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full'}
 
 ];

@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import { Meal } from 'src/app/interfaces/recipesBy.interface';
 import { RecipesServiceService } from 'src/app/services/recipes-service.service';
 
@@ -18,7 +19,8 @@ export class CardDishComponent implements  OnChanges {
 
   recipes: Meal[] = [];
 
-  constructor( private recipeService: RecipesServiceService) { }
+  constructor( private recipeService: RecipesServiceService,
+               private router: Router) { }
  
 
 
@@ -60,6 +62,10 @@ export class CardDishComponent implements  OnChanges {
       default:
         break;
     }
+  }
+
+  showRecipe( id: string ) {
+    this.router.navigateByUrl(`/recipe/${id}`);
   }
 
 

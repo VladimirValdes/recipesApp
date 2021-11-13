@@ -1,7 +1,8 @@
 
     <div class="dishes-container">
         <article class="dish"
-            *ngFor="let recipe of recipes">
+            *ngFor="let recipe of recipes"
+            (click)="showRecipe( recipe.idMeal )">
             <img [src]="recipe.strMealThumb" [alt]="recipe.strMeal" class="dish__img">
             <section class="dish__info">
                 <h3 class="dish__name">{{ recipe.strMeal }}</h3>
