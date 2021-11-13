@@ -1,0 +1,208 @@
+
+@import 'responsive/mixins';
+
+.recipe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1124px;
+    margin: 0 auto;
+    padding: 9rem 1rem;
+    padding-bottom: 2rem;
+
+    &__imgContainer {
+        flex: 1 0 300px;
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+
+    }
+
+    &__img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 5px;
+    }
+
+    &__info {
+        flex: 1 0 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__title {
+        margin-bottom: 0;
+        font-family: var(--pf-font-titles);
+        font-size: var(--pf-fs-xl);
+        font-weight: var(--pf-font-weight-xl);
+        color: var(--pf-tertiary-color);
+        text-align: center;
+    }
+
+    &__links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        padding-left: 0;
+    }
+
+    &__item {
+        padding: 1rem;
+        
+
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--pf-fs-500);
+        font-weight: var(--pf-font-weight-md);
+        color: var(--pf-tertiary-color);
+
+        &__icon {
+            width: 100%;
+            max-width: 30px;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+            margin-right: 0.5rem;
+            
+        }
+
+        span {
+        font-weight: var(--pf-font-weight-lg);
+
+        }
+
+
+    }
+
+    
+
+
+}
+
+.recipe {
+
+    &__steps {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 1124px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+
+        &__title {
+            font-family: var(--pf-font-titles);
+            font-size: var(--pf-fs-700);
+            font-weight: var(--pf-font-weight-lg);
+            color: var(--pf-teriary-color);
+        }
+    }
+
+    &__ingredients {
+        
+        width: 100%;
+        
+
+        &__list {
+            padding-left: 0;
+        }
+
+    }
+
+    &__ingredient {
+        width: 100%;
+        font-size: var(--pf-fs-400);
+        font-weight: var(--pf-font-weight-sm);
+        color: var(--pf-primary-color);
+        border-bottom: 1px solid var(--pf-secondary-color);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    &__elaboration {
+        .wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            padding-top: 25px;
+            height: 0;
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    &__elaboration__step {
+        font-size: var(--pf-fs-400);
+        font-weight: var(--pf-font-weight-sm);
+        color: var(--pf-primary-color);
+    }
+
+    &__tags {
+        width: 100%;
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding-left: 0;
+
+        }
+
+        &__tag {
+            background-color: var(--pf-highlight-color);
+            font-size: var(--pf-fs-400);
+            font-weight: var(--pf-font-weight-md);
+            color: var(--pf-tertiary-color);
+            padding: 8px 17px;
+            margin: 3px;
+            margin-left: 0;
+            border-radius: 6px;
+        }
+    }
+
+    
+@include respond-above(lmd) {
+
+    &__steps {
+        align-items: flex-start;
+    }
+
+    &__ingredients {
+        order: 2;
+        flex: 0 0 350px;
+        margin-left: auto;
+    }
+
+    &__elaboration {
+        order: 1;
+        flex: 1 0 400px;
+        padding: 0 2rem;
+    }
+
+    &__tags {
+        order: 3;
+    }
+}
+
+
+    
+}
