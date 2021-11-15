@@ -52,6 +52,16 @@ export class RecipesServiceService {
                     )
   }
 
+  getRecipeById( id: string ): Observable< MealR > {
+    return this.http.get< Recipes >(`${ this.baseUrl}/lookup.php?i=${ id }`)
+                    .pipe(
+                        map( recipe  => {
+                          // this.ingredients = recipe;
+                          return recipe.meals[0];
+                        })
+                    )
+  }
+
   filterByLetter( term = 'a'): Observable< MealR[] > {
     return this.http.get< Recipes >(`${ this.baseUrl}/search.php?f=${ term }`)
                       .pipe(

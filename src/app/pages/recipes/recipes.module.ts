@@ -17,7 +17,7 @@ import { CardRecipeModule } from 'src/app/components/card-recipe/card-recipe.mod
     RecipesRoutingModule,
     BannerPerPageModule,
     SearchModule,
-    CardRecipeModule
+    CardRecipeModule,
   ]
 })
 export class RecipesModule { }

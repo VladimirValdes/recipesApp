@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RecipeComponent } from './recipe.component';
 import { RecipeRoutingModule } from './recipe-routing.module';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 
 
@@ -11,7 +12,8 @@ import { RecipeRoutingModule } from './recipe-routing.module';
   ],
   imports: [
     CommonModule,
-    RecipeRoutingModule
+    RecipeRoutingModule,
+    PipesModule
   ],
   exports: [
   ]

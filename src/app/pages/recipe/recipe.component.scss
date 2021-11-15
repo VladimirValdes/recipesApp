@@ -125,7 +125,7 @@
 
     &__ingredient {
         width: 100%;
-        font-size: var(--pf-fs-400);
+        font-size: var(--pf-fs-500);
         font-weight: var(--pf-font-weight-sm);
         color: var(--pf-primary-color);
         border-bottom: 1px solid var(--pf-secondary-color);
@@ -151,7 +151,7 @@
     }
 
     &__elaboration__step {
-        font-size: var(--pf-fs-400);
+        font-size: var(--pf-fs-500);
         font-weight: var(--pf-font-weight-sm);
         color: var(--pf-primary-color);
     }
@@ -169,7 +169,7 @@
 
         &__tag {
             background-color: var(--pf-highlight-color);
-            font-size: var(--pf-fs-400);
+            font-size: var(--pf-fs-500);
             font-weight: var(--pf-font-weight-md);
             color: var(--pf-tertiary-color);
             padding: 8px 17px;

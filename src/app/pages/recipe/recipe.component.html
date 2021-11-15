@@ -1,40 +1,24 @@
 <section class="recipe">
     <div class="recipe__imgContainer">
-        <img src="https://www.themealdb.com/images/media/meals/ursuup1487348423.jpg" alt="" class="recipe__img">
+        <img [src]="recipe.strMealThumb" [alt]="recipe.strMeal" class="recipe__img">
     </div>
     <article class="recipe__info">
-        <h1 class="recipe__title">Beef Brisket Pot Roast</h1>
+        <h1 class="recipe__title">{{ recipe.strMeal }}t</h1>
         <ul class="recipe__links">
             <li class="recipe__item">
                 <a class="recipe__link">
                     <img src="/assets/icons/category.png" alt="category" class="recipe__link__icon">
                     <span>Category:</span>
-                    Beef
+                    {{ recipe.strCategory}}
                 </a>
             </li>
             <li class="recipe__item recipe__item--border">
                 <a class="recipe__link">
                     <img src="/assets/icons/country.png" alt="category" class="recipe__link__icon">
                     <span>Cuisine:</span>
-                    El Salvador
+                    {{ recipe.strArea }}
                 </a>
             </li>
-            <!-- <li class="recipe__item">
-                <a 
-                    href="https://www.youtube.com/watch?v=gh48wM6bPWQ"
-                    class="recipe__link">
-                    <img src="/assets/icons/video-tutorial.png" alt="category" class="recipe__link__icon">
-                    Watch tutorial
-                </a>
-            </li>
-            <li class="recipe__item">
-                <a 
-                    href="http://www.simplyrecipes.com/recipes/beef_brisket_pot_roast/"
-                    class="recipe__link">
-                    <img src="/assets/icons/internet.png" alt="category" class="recipe__link__icon">
-                    Look resource
-                </a>
-            </li> -->
         </ul>
     </article>
 
@@ -60,26 +44,22 @@
     <article class="recipe__elaboration">
         <h3 class="recipe__steps__title">How to Make It</h3>
         <p class="recipe__elaboration__step">
-            Labour, of evaluated would he the a the our what is in the arduous sides behavioural is which the have
-            didn't kicked records the it framework by the for traveler sure the can most well her. Entered have break
-            himself cheek, and activity, for bit of text.
+            {{ recipe.strInstructions }}
         </p>
         <div class="wrapper">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/gh48wM6bPWQ" title="YouTube video player"
+            <iframe width="560" height="315" [src]="video | safe" title="YouTube video player"
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         </div>
     </article>
 
-    <article class="recipe__tags">
+    <article class="recipe__tags"
+             *ngIf="tags.length > 0">
         <h3 class="recipe__steps__title">Tags</h3>
         <ul class="recipe__tags__list">
-            <li class="recipe__tags__tag">DINNER</li>
-            <li class="recipe__tags__tag">DINNER</li>
-            <li class="recipe__tags__tag">DINNER</li>
-            <li class="recipe__tags__tag">DINNER</li>
-            <li class="recipe__tags__tag">DINNER</li>
-            <li class="recipe__tags__tag">DINNER</li>
+            <li class="recipe__tags__tag"
+                *ngFor="let tag of tags">{{ tag }}</li>
+          
 
         </ul>
     </article>
