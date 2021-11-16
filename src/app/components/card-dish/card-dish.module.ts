@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardDishComponent } from './card-dish.component';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 
 
@@ -9,7 +10,8 @@ import { CardDishComponent } from './card-dish.component';
     CardDishComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PipesModule
   ],
   exports: [
     CardDishComponent

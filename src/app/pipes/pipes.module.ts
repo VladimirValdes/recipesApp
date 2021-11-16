@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SafePipe } from './sanitazer.pipe';
+import { EllipsisPipe } from './ellipsis.pipe';
 
 
 
 @NgModule({
   declarations: [
-    SafePipe
+    SafePipe,
+    EllipsisPipe
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    SafePipe
+    SafePipe,
+    EllipsisPipe
   ]
 })
 export class PipesModule { }

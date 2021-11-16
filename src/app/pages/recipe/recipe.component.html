@@ -25,18 +25,55 @@
 
 </section>
 
-<section class="recipe__steps">
+<section class="recipe__main">
+    <ul class="recipe__main__opts">
+        <li class="recipe__main__item"
+            [ngClass]="{'recipe__main__item--active': showI}"
+             (click)="show( true )">Ingredients</li>
+        <li class="recipe__main__item"
+            [ngClass]="{'recipe__main__item--active': !showI}"
+            (click)="show( false)">Instructions</li>
+
+    </ul>
+
+    <article class="recipe__ingredients"
+        *ngIf="showI">
+        <ul class="recipe__ingredients__list">
+            <li 
+                class="recipe__ingredient"
+                *ngFor="let ingredient of ingredients; let i = index"
+             >
+                {{ measures[i] }}{{ ingredient }}
+            </li>
+           
+
+        </ul>
+    </article>
+
+    <article class="recipe__elaboration"
+        *ngIf="!showI">
+        <p class="recipe__elaboration__step">
+            {{ recipe.strInstructions }}
+        </p>
+        <div class="wrapper">
+            <iframe width="560" height="315" [src]="video | safe" title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+    </article>
+</section>
+
+<!-- <section class="recipe__steps">
     <article class="recipe__ingredients">
         <h3 class="recipe__steps__title">Ingredients</h3>
         <ul class="recipe__ingredients__list">
-            <li class="recipe__ingredient">1 pound fresh prepared pizza dough</li>
-            <li class="recipe__ingredient">1 pound fresh prepared pizza dough</li>
-
-            <li class="recipe__ingredient">1 pound fresh prepared pizza dough</li>
-
-            <li class="recipe__ingredient">1 pound fresh prepared pizza dough</li>
-
-            <li class="recipe__ingredient">1 pound fresh prepared pizza dough</li>
+            <li 
+                class="recipe__ingredient"
+                *ngFor="let ingredient of ingredients; let i = index"
+             >
+                {{ measures[i] }}{{ ingredient }}
+            </li>
+           
 
         </ul>
     </article>
@@ -65,4 +102,4 @@
     </article>
 
  
-</section>
+</section> -->

@@ -87,6 +87,43 @@
 
     }
 
+    &__main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1124px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+
+        &__opts {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            border-bottom: 1px solid var(--pf-secondary-color);
+            padding-left: 0;
+
+        }
+
+        &__item {
+            font-family: var(--pf-font-titles);
+            font-size: var(--pf-fs-600);
+            font-weight: var(--pf-font-weight-md);
+            color: var(--pf-teriary-color);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+
+            
+
+            &--active {
+                border-top: 1px solid var(--pf-secondary-color);
+                border-left: 1px solid var(--pf-secondary-color);
+                border-right: 1px solid var(--pf-secondary-color);
+                color: var(--pf-highlight-color);
+            }
+        }
+    }
+
     
 
 
@@ -104,12 +141,7 @@
         margin: 0 auto;
         padding: 1rem 1.5rem;
 
-        &__title {
-            font-family: var(--pf-font-titles);
-            font-size: var(--pf-fs-700);
-            font-weight: var(--pf-font-weight-lg);
-            color: var(--pf-teriary-color);
-        }
+     
     }
 
     &__ingredients {
@@ -126,9 +158,9 @@
     &__ingredient {
         width: 100%;
         font-size: var(--pf-fs-500);
-        font-weight: var(--pf-font-weight-sm);
+        font-weight: var(--pf-font-weight-xsm);
         color: var(--pf-primary-color);
-        border-bottom: 1px solid var(--pf-secondary-color);
+        border-bottom: 1px dashed var(--pf-secondary-color);
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
@@ -137,22 +169,24 @@
         .wrapper {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 */
-            padding-top: 25px;
+            padding-top: 50px;
             height: 0;
 
             iframe {
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 100%;
-                height: 100%;
+                right: 0;
+                width: 90%;
+                height: 75%;
+                margin: 0 auto;
             }
         }
     }
 
     &__elaboration__step {
         font-size: var(--pf-fs-500);
-        font-weight: var(--pf-font-weight-sm);
+        font-weight: var(--pf-font-weight-xsm);
         color: var(--pf-primary-color);
     }
 
@@ -170,7 +204,7 @@
         &__tag {
             background-color: var(--pf-highlight-color);
             font-size: var(--pf-fs-500);
-            font-weight: var(--pf-font-weight-md);
+            font-weight: var(--pf-font-weight-sm);
             color: var(--pf-tertiary-color);
             padding: 8px 17px;
             margin: 3px;
@@ -180,28 +214,28 @@
     }
 
     
-@include respond-above(lmd) {
+// @include respond-above(lmd) {
 
-    &__steps {
-        align-items: flex-start;
-    }
+//     &__steps {
+//         align-items: flex-start;
+//     }
 
-    &__ingredients {
-        order: 2;
-        flex: 0 0 350px;
-        margin-left: auto;
-    }
+//     &__ingredients {
+//         order: 2;
+//         flex: 0 0 350px;
+//         margin-left: auto;
+//     }
 
-    &__elaboration {
-        order: 1;
-        flex: 1 0 400px;
-        padding: 0 2rem;
-    }
+//     &__elaboration {
+//         order: 1;
+//         flex: 1 0 400px;
+//         padding: 0 2rem;
+//     }
 
-    &__tags {
-        order: 3;
-    }
-}
+//     &__tags {
+//         order: 3;
+//     }
+// }
 
 
     

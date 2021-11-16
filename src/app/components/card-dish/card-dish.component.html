@@ -5,7 +5,7 @@
             (click)="showRecipe( recipe.idMeal )">
             <img [src]="recipe.strMealThumb" [alt]="recipe.strMeal" class="dish__img">
             <section class="dish__info">
-                <h3 class="dish__name">{{ recipe.strMeal }}</h3>
+                <h3 class="dish__name">{{ recipe.strMeal | ellipsis }}</h3>
             </section>
         </article>  
     </div>

@@ -8,7 +8,7 @@
                 <span class="recipe__icon"></span>
                 {{ recipe.strCategory }}
             </a> 
-            <h3 class="recipe__name">{{ recipe.strMeal }}</h3>
+            <h3 class="recipe__name">{{ recipe.strMeal | ellipsis: true }}</h3>
         </section>
     </article>
     
