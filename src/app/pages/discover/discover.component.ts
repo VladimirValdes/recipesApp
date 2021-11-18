@@ -14,18 +14,24 @@ export class DiscoverComponent implements OnInit {
   banner = {
     title: "Discover",
     desc: "Let's check different recipes by country or by ingredients."
-  }
+  };
 
-  constructor( private recipesServices: RecipesServiceService,
+  page = 0;
+  items = 14;
+
+  constructor( private recipeServices: RecipesServiceService,
                private router: Router) { }
 
   ngOnInit(): void {
-    this.areas = this.recipesServices.areas.filter( a => a.strArea !== 'Unknown');
+    this.recipeServices.getAllArea().subscribe( areas => {
+      this.areas = areas.filter( a => a.strArea !== 'Unknown');
+      console.log(this.areas.length)
+    });
   }
 
   recipesBy( area: Meal ) {
 
-    this.recipesServices.area = area;
+    this.recipeServices.area = area;
     
     this.router.navigateByUrl(`/recipesBy/country:${ area.strArea }`);
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Meal } from 'src/app/interfaces/ingredients.interface';
+
 import { RecipesServiceService } from 'src/app/services/recipes-service.service';
 
 @Component({
@@ -12,6 +13,8 @@ export class IngredientComponent implements OnInit {
 
 
   ingredients: Meal[] = [];
+  page = 0;
+  items = 4;
 
   constructor( private recipeService: RecipesServiceService,
                private router: Router) { }
@@ -19,7 +22,6 @@ export class IngredientComponent implements OnInit {
   ngOnInit(): void {
     this.recipeService.getAllIngredients().subscribe( ingredients => {
         this.ingredients = ingredients;
-        console.log( this.ingredients );
     })
   }
 

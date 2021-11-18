@@ -6,9 +6,14 @@
     <p class="ingredients__desc">
         Discover recipices by your favorite ingredients.
     </p>
+    <app-pagination [itemsP]="items" (page)="page = $event"
+                    class="ingredients__carousel">
+
+    </app-pagination>
+   
     <ul class="ingredients__list">
         <li class="ingredients__item"
-            *ngFor="let ingredient of ingredients | slice:0:4">
+            *ngFor="let ingredient of  ingredients| filterPagination: page: 4">
             <a class="ingredients__link"
                 (click)="recipesBy( ingredient )">
                 <img src="https://www.themealdb.com/images/ingredients/{{ ingredient.strIngredient }}.png" 

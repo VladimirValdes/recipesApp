@@ -3,12 +3,21 @@
     <section class="section-area">
         <h2 class="section__title">Recipes by Country</h2>
         <p class="section__subtitle">Choose a country and discover different recipes</p>
-    
+
+      
+        <app-pagination [itemsP]="items" 
+                        [lastItem]="(areas | filterPagination: page: 14).length === 0" 
+                        (page)="page = $event"
+                        class="section__carousel">
+
+        </app-pagination>
+
+        
         <ul class="section__areas__list"
            >
             <li class="section__areas__item"
 
-            *ngFor="let area of areas; let i = index ">
+            *ngFor="let area of areas | filterPagination: page: 14">
                 <a 
                   (click)="recipesBy( area )"
                   class="section__areas__link">

@@ -5,7 +5,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 1124px;
     padding: 2rem 1rem;
     padding-top: 6rem;
     margin: 0 auto;
@@ -16,7 +15,6 @@
 .section {
     
   
-    // margin-top: 4rem;
 
     &__title {
         font-family: var(--pf-font-titles);
@@ -78,6 +76,9 @@
         width: 100%;
     }
 
+    &__carousel {
+        margin-left: auto;
+    }
 
-
+   
 }

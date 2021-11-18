@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IngredientComponent } from './ingredient.component';
+import { PipesModule } from 'src/app/pipes/pipes.module';
+import { PaginationModule } from '../pagination/pagination.module';
 
 
 
@@ -9,7 +11,9 @@ import { IngredientComponent } from './ingredient.component';
     IngredientComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PipesModule,
+    PaginationModule
   ],
   exports: [
     IngredientComponent

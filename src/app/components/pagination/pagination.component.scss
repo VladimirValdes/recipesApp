@@ -1,0 +1,45 @@
+.carousel {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60px;
+    margin-left: auto;
+    margin-top: 1rem;
+    margin-right: 2rem;
+
+    &__btn {
+        background-color: transparent;
+        padding: 4px 8px;
+        border: none;
+        cursor: pointer;
+
+        &--disabled {
+            cursor: default;
+        }
+    }
+
+
+    &__arrow {
+        display: inline-block;
+        border: solid var(--pf-highlight-color);
+        border-width: 0 3px 3px 0;
+        padding: 8px;
+
+        &--disabled {
+            border-color: #cbfcdb;
+        }
+    }
+
+
+
+    &__prev {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+
+    &__next {
+        
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+}

@@ -1,0 +1,21 @@
+<div class="carousel">
+    <button class="carousel__btn"
+        (click)="prevPage()"
+        [ngClass]="{'carousel__btn--disabled': page === 0}">
+        <span class="carousel__arrow carousel__prev"
+              [ngClass]="{'carousel__arrow--disabled': page === 0}">
+        </span>
+
+    </button>
+    <button class="carousel__btn"
+    [ngClass]="{'carousel__btn--disabled': lastItem}"
+        (click)="nextPage()">
+        <span class="carousel__arrow carousel__next"
+              [ngClass]="{'carousel__arrow--disabled': lastItem}"></span>
+
+    </button>
+
+  <!-- <p>{{ lastItem }}</p> -->
+
+
+</div>

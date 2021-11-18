@@ -10,7 +10,7 @@ import { RecipesServiceService } from 'src/app/services/recipes-service.service'
 })
 export class HomeComponent implements OnInit {
 
-  areas: Meal[] = [];
+  // areas: Meal[] = [];
   recipes: MealR[] = [];
   banner = {
     title: "Simple and Tasty Juice Recipes",
@@ -18,16 +18,10 @@ export class HomeComponent implements OnInit {
   }
 
   showOnly = 4;
+
   constructor(private recipeService: RecipesServiceService) { }
 
   ngOnInit(): void {
-
-
-    this.recipeService.getAllArea().subscribe( areas => {
-      this.areas = areas;
-      console.log( areas );
-    });
-
     this.recipeService.filterByLetter().subscribe( recipes => {
       this.recipes = recipes;
       console.log( this.recipes );
