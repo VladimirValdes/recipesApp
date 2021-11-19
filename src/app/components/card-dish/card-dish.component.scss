@@ -1,13 +1,13 @@
 
 .dishes-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 300px));
-    justify-content: space-evenly;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 300px));
+    justify-content: center;
     width: 100%;
     max-width: 1124px;
     margin: 0 auto;
     padding: 2rem 1rem;
-    gap: 1.5rem 1rem;
+    gap: 1.5rem;
 
 } 
 
