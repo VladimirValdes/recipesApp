@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Meal } from 'src/app/interfaces/recipes.interface';
+import { RecipesServiceService } from 'src/app/services/recipes-service.service';
 
 @Component({
   selector: 'app-search',
@@ -7,8 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
   
-  constructor() { }
+  @Output('recipes') recipesByName: EventEmitter<Meal[]> = new EventEmitter();
+  
+  constructor(private recipesService: RecipesServiceService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.search('s');
+  }
+
+  search( term: string ) {
+
+
+    (term.length === 0) ? term = 's' : term;
+
+    if (term) {
+      
+      this.recipesService.filterByName( term ).subscribe( recipes => {
+
+        this.recipesByName.emit(recipes);
+
+
+      })
+    } 
+  }
 
 }

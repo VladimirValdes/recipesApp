@@ -20,10 +20,6 @@ export class RecipesComponent implements OnInit {
   constructor( private recipeService: RecipesServiceService) { }
 
   ngOnInit(): void {
-    this.recipeService.filterByLetter( "b" ).subscribe( recipes => {
-      this.recipes = recipes;
-      console.log( this.recipes );
-    })
   }
 
 }

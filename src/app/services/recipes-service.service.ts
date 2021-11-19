@@ -100,6 +100,15 @@ export class RecipesServiceService {
                           })
                       )
   }
+
+  filterByName( term: string ): Observable< MealR[] > {
+    return this.http.get< Recipes >(`${ this.baseUrl}/search.php?s=${ term }`)
+                      .pipe(
+                          map( recipe  => {
+                             return recipe.meals;
+                          })
+                      )
+  }
   
 
 }

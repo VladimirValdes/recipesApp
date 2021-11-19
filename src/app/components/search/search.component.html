@@ -12,7 +12,8 @@
        name="search-input"
        placeholder="Search for recipes..."
        aria-label="Search"
-       #term>
+       #term
+       (keyup)="search( term.value)">
      
   </form>
 </section>
