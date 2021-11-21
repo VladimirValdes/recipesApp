@@ -26,7 +26,10 @@ const routes: Routes = [
     path: 'recipe/:id', loadChildren: () =>
         import('./pages/recipe/recipe.module').then( m => m.RecipeModule )
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full'}
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: '**', loadChildren: () => 
+          import('./pages/404/not-foundmodule').then( m => m.notFoundModule )
+  }
 
 ];
 
