@@ -1,4 +1,5 @@
-<section class="recipe">
+<section class="recipe"
+        *ngIf="recipe !== null">
     <div class="recipe__imgContainer">
         <img [src]="recipe.strMealThumb" [alt]="recipe.strMeal" class="recipe__img">
     </div>
@@ -25,7 +26,8 @@
 
 </section>
 
-<section class="recipe__main">
+<section class="recipe__main"
+    *ngIf="recipe !== null">
     <ul class="recipe__main__opts">
         <li class="recipe__main__item"
             [ngClass]="{'recipe__main__item--active': showI}"
@@ -63,33 +65,8 @@
     </article>
 </section>
 
-<!-- <section class="recipe__steps">
-    <article class="recipe__ingredients">
-        <h3 class="recipe__steps__title">Ingredients</h3>
-        <ul class="recipe__ingredients__list">
-            <li 
-                class="recipe__ingredient"
-                *ngFor="let ingredient of ingredients; let i = index"
-             >
-                {{ measures[i] }}{{ ingredient }}
-            </li>
-           
 
-        </ul>
-    </article>
-
-    <article class="recipe__elaboration">
-        <h3 class="recipe__steps__title">How to Make It</h3>
-        <p class="recipe__elaboration__step">
-            {{ recipe.strInstructions }}
-        </p>
-        <div class="wrapper">
-            <iframe width="560" height="315" [src]="video | safe" title="YouTube video player"
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
-    </article>
-
+<!-- 
     <article class="recipe__tags"
              *ngIf="tags.length > 0">
         <h3 class="recipe__steps__title">Tags</h3>
@@ -99,7 +76,5 @@
           
 
         </ul>
-    </article>
+    </article> -->
 
- 
-</section> -->
