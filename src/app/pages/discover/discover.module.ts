@@ -19,7 +19,7 @@ import { PaginationModule } from 'src/app/components/pagination/pagination.modul
     BannerPerPageModule,
     IngredientModule,
     PipesModule,
-    PaginationModule
+    PaginationModule,
   ]
 })
 export class DiscoverModule { }

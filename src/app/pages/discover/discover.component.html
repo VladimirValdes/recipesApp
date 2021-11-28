@@ -6,8 +6,11 @@
 
       
         <app-pagination [itemsP]="items" 
-                        [lastItem]="(areas | filterPagination: page: 14).length === 0" 
                         (page)="page = $event"
+                        [totalItems]="areas.length"
+                        [icon]="'info'"
+                        [title]="'Opps'"
+                        [desc]="'There is not more countries to show'"
                         class="section__carousel">
 
         </app-pagination>

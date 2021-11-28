@@ -25,7 +25,6 @@ export class DiscoverComponent implements OnInit {
   ngOnInit(): void {
     this.recipeServices.getAllArea().subscribe( areas => {
       this.areas = areas.filter( a => a.strArea !== 'Unknown');
-      console.log(this.areas.length)
     });
   }
 

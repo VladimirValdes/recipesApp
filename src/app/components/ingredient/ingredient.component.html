@@ -6,14 +6,24 @@
     <p class="ingredients__desc">
         Discover recipices by your favorite ingredients.
     </p>
-    <app-pagination [itemsP]="items" (page)="page = $event"
+    <app-pagination [itemsP]="items"
+                    (page)="page = $event"
+                    [totalItems]="ingredients.length"
+                    [icon]="'info'"
+                    [title]="'Opps'"
+                    [desc]="'There is not more ingredients to show'"
                     class="ingredients__carousel">
 
     </app-pagination>
+
+    <div
+    *ngIf="( ingredients | filterPagination: page: items ).length === 0">
+        No hay mas Ingredientes {{ ( ingredients | filterPagination: page: items ).length === 0 }}
+    </div>
    
     <ul class="ingredients__list">
         <li class="ingredients__item"
-            *ngFor="let ingredient of  ingredients| filterPagination: page: 4">
+            *ngFor="let ingredient of  ingredients| filterPagination: page: items">
             <a class="ingredients__link"
                 (click)="recipesBy( ingredient )">
                 <img src="https://www.themealdb.com/images/ingredients/{{ ingredient.strIngredient }}.png" 

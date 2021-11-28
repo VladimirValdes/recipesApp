@@ -8,7 +8,7 @@ import { Meal as MealR } from '../interfaces/ingredients.interface';
 export class FilterPaginationPipe implements PipeTransform {
 
   transform( data: any[] , page: number = 0, amountP: number = 0): any[]  {
-    // console.log(data.slice(page, page + amountP));
+   
     return data.slice(page, page + amountP);
   }
 

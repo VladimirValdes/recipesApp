@@ -6,16 +6,18 @@
               [ngClass]="{'carousel__arrow--disabled': page === 0}">
         </span>
 
+        <!--  -->
+        <!--  -->
     </button>
     <button class="carousel__btn"
-    [ngClass]="{'carousel__btn--disabled': lastItem}"
-        (click)="nextPage()">
+            [ngClass]="{'carousel__btn--disabled': disabledNext}"
+            [disabled]="disabledNext"
+            (click)="nextPage()">
         <span class="carousel__arrow carousel__next"
-              [ngClass]="{'carousel__arrow--disabled': lastItem}"></span>
+              [ngClass]="{'carousel__arrow--disabled': disabledNext}"></span>
 
     </button>
 
-  <!-- <p>{{ lastItem }}</p> -->
 
 
 </div>

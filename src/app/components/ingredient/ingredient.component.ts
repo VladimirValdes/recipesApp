@@ -21,7 +21,7 @@ export class IngredientComponent implements OnInit {
 
   ngOnInit(): void {
     this.recipeService.getAllIngredients().subscribe( ingredients => {
-        this.ingredients = ingredients;
+        this.ingredients = ingredients.slice(0,8);
     })
   }
 
