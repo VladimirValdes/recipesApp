@@ -34,8 +34,7 @@ export class PaginationComponent implements OnInit {
   nextPage() {
 
 
-      console.log('Total', this.total);
-      console.log('ArrayItems', this.totalItems);
+    
   
     if ( this.total < this.totalItems) {
         this.total += this.items;

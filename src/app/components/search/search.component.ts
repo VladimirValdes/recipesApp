@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Meal } from 'src/app/interfaces/recipes.interface';
+import { AlertService } from 'src/app/services/alert.service';
 import { RecipesServiceService } from 'src/app/services/recipes-service.service';
 
 @Component({
@@ -26,7 +27,8 @@ export class SearchComponent implements OnInit {
       
       this.recipesService.filterByName( term ).subscribe( recipes => {
 
-        this.recipesByName.emit(recipes);
+
+          this.recipesByName.emit(recipes);
 
 
       })
