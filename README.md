@@ -2,14 +2,14 @@
 
 <h1 align="center">Recipes App</h1>
 
-
 <div align="center">
-  <h3>
-    <a href="https://{your-url-to-the-solution}">
-      View Project
-    </a>
-  </h3>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f1e26046-39d3-4136-b11b-cbde0b7f40f6/deploy-status)](https://app.netlify.com/sites/apprecipes1/deploys)
+
 </div>
+
+
+
 
 <!-- TABLE OF CONTENTS -->
 
