@@ -1,27 +1,81 @@
-# RecipesApp
+<!-- Please update value in the {}  -->
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
+<h1 align="center">Recipes App</h1>
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<div align="center">
+  <h3>
+    <a href="https://{your-url-to-the-solution}">
+      View Project
+    </a>
+  </h3>
+</div>
 
-## Code scaffolding
+<!-- TABLE OF CONTENTS -->
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Table of Contents
 
-## Build
+- [Overview](#overview)
+- [Built With](#built-with)
+- [Resources](#Resources)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+<!-- OVERVIEW -->
 
-## Running unit tests
+## Overview
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![screenshot](src/assets/images/recipesApp.gif)
 
-## Running end-to-end tests
+This app was built with the purpose to better my programming skills the app is about recipes I use [TheMealDB](https://www.themealdb.com/api.php) to get all the recipes in the app you can filter recipes by categories, countries and ingredients.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
+My experience to develop this project was a fascinating at the beginning I didn't have any idea what will be the design for this app that was a challenge for me, but I got some inspiration using websites such as [Dribbble](https://dribbble.com/) also I had some obstacles on the way for instance the API didn't have pagination I had to research how to create a local pagination.
 
-## Further help
+I learned a lot of things developing this app, for example I learned how to use lazy loading in angular.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+### Built With
+
+<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
+
+
+  - Angular
+  - SCSS
+  - Typescript
+  - BEM (block__element--modifier)
+  - Mobile-first workflow
+
+
+
+## Resources
+These are some resources that I used to develop the app.
+
+<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
+
+- [Trabajando con Lazy Loading en Angular 8–9](https://mugan86.medium.com/trabajando-con-lazy-loading-en-angular-8-e1611ce2c46f)
+- [Paginación local filtro](https://www.youtube.com/watch?v=cPTcn7mpKIQ)
+- [Useful Sass (SCSS) media query mixins](https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/)
+- [Sweetalert2](https://sweetalert2.github.io/)
+
+
+## How To Use
+
+<!-- Example: -->
+
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+
+```bash
+# Clone this repository
+$ git clone hhttps://github.com/VladimirValdes/recipesApp
+
+# Install dependencies
+$ npm install
+
+# Run the app
+$ ng serve
+```
+
+
+<!-- ## Contact
+
+- Website [your-website.com](https://{your-web-site-link})
+- GitHub [@your-username](https://{github.com/your-usermame})
+- Twitter [@your-twitter](https://{twitter.com/your-username}) -->
