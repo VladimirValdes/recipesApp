@@ -4,7 +4,7 @@ import { DiscoverComponent } from './discover.component';
 
 const routes: Routes = [
   {
-    path: '', component: DiscoverComponent
+    path: '', component: DiscoverComponent, data: { title: 'Discover'}
   }
 ];
 

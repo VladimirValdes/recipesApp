@@ -4,7 +4,7 @@ import { RecipesByComponent } from './recipes-by.component';
 
 const routes: Routes = [
   {
-    path: '', component: RecipesByComponent
+    path: '', component: RecipesByComponent, data: { title: 'Recipes'}
   }
 ];
 
