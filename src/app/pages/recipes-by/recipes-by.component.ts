@@ -46,12 +46,10 @@ export class RecipesByComponent implements OnInit {
             break;
           case 'ingredient':
             this.search.img = `https://www.themealdb.com/images/ingredients/${ this.recipesService.ingredient.strIngredient }.png`;
-            // this.search.term = this.recipesService.ingredient.strIngredient;
 
             break;
           case 'country':
             this.search.img = `/assets/areas/${ this.recipesService.area.strArea }.png`;
-            // this.search.term = this.recipesService.area.strArea;
             break;
           default:
             break;

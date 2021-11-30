@@ -56,7 +56,6 @@ export class RecipeComponent implements OnInit {
 
     Object.getOwnPropertyNames( recipe ).forEach( ( key, index ) => {
 
-      // console.log(key);
       if ( recipe[key] ) {
         if ( index >= 9 && index <= 28) {
        
@@ -72,7 +71,6 @@ export class RecipeComponent implements OnInit {
 
     });
 
-    console.log( this.ingredients, this.measures );
     
 
   }

@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.recipeService.filterByLetter().subscribe( recipes => {
       this.recipes = recipes;
-      console.log( this.recipes );
     })
 
     
