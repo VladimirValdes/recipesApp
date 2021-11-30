@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f1e26046-39d3-4136-b11b-cbde0b7f40f6/deploy-status)](https://app.netlify.com/sites/apprecipes1/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f1e26046-39d3-4136-b11b-cbde0b7f40f6/deploy-status)](https://apprecipes1.netlify.app/)
 
 </div>
 
