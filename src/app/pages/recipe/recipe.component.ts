@@ -19,6 +19,7 @@ export class RecipeComponent implements OnInit {
   measures: string[] =  [];
   showI = true;
   showInstructions = false;
+  recipeImage = '';
 
   constructor( private recipeService: RecipesServiceService,
                private activatedRouter: ActivatedRoute,
@@ -41,6 +42,7 @@ export class RecipeComponent implements OnInit {
         this.getVideo( this.recipe.strYoutube );
         this.getTags( this.recipe.strTags );
       
+        this.recipeImage = this.recipe.strMealThumb;
      
       
 
@@ -52,7 +54,6 @@ export class RecipeComponent implements OnInit {
 
   getIngredients( recipe: any ) {
 
-    console.log( recipe)
 
     Object.getOwnPropertyNames( recipe ).forEach( ( key, index ) => {
 

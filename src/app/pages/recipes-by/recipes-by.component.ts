@@ -30,26 +30,37 @@ export class RecipesByComponent implements OnInit {
   ngOnInit(): void {
     this.activedRouter.params.subscribe( ({ termino }) => {
 
-       const [ a, b] = termino.split(':');
+       const [ filter, term] = termino.split(':');
 
-        this.search.searchBy =  a;
-        this.filter.term = b;
-        this.filter.filter = a;
-        this.search.term = b;
+
+        this.search.searchBy =  filter;
+        this.filter.term = term;
+        this.filter.filter = filter;
+        this.search.term = term;
 
 
        
-        switch (a) {
+        switch (filter) {
           case 'category':
+          if (this.recipesService.category !== undefined) {
             this.search.img = this.recipesService.category.strCategoryThumb;
+          }
+
             
             break;
           case 'ingredient':
-            this.search.img = `https://www.themealdb.com/images/ingredients/${ this.recipesService.ingredient.strIngredient }.png`;
+
+          if (this.recipesService.ingredient !== undefined) {
+            this.search.img = `https://www.themealdb.com/images/ingredients/${ this.recipesService.ingredient.strIngredient }.png` || '';
+          }
+            // console.log( this.recipesService.ingredient.strIngredient)
 
             break;
           case 'country':
-            this.search.img = `/assets/areas/${ this.recipesService.area.strArea }.png`;
+            if (this.recipesService.area !== undefined) {
+              this.search.img = `/assets/areas/${ this.recipesService.area.strArea }.png`;
+            }
+  
             break;
           default:
             break;

@@ -1,7 +1,11 @@
 <section class="recipe"
         *ngIf="recipe !== null">
     <div class="recipe__imgContainer">
-        <img [src]="recipe.strMealThumb" [alt]="recipe.strMeal" class="recipe__img">
+        <img
+             
+            [src]="recipeImage"    
+            [alt]="recipe.strMeal" 
+            class="recipe__img">
     </div>
     <article class="recipe__info">
         <h1 class="recipe__title">{{ recipe.strMeal }}t</h1>

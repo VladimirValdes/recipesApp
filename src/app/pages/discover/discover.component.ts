@@ -30,9 +30,12 @@ export class DiscoverComponent implements OnInit {
 
   recipesBy( area: Meal ) {
 
-    this.recipeServices.area = area;
-    
-    this.router.navigateByUrl(`/recipesBy/country:${ area.strArea }`);
+    if (area) {
+       this.recipeServices.area = area;
+       this.router.navigateByUrl(`/recipesBy/country:${ area.strArea }`);
+    }
+
+   
 
   }
 

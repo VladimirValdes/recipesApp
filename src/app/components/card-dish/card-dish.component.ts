@@ -29,7 +29,6 @@ export class CardDishComponent implements  OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if ( changes.filter && changes.filter.currentValue ) {
 
-      console.log(this.filter );
         this.filterBy(this.filter);
     }
   }

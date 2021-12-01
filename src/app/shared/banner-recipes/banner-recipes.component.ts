@@ -17,14 +17,14 @@ export class BannerRecipesComponent implements OnInit {
 
   ngOnInit(): void {
 
-
+    // console.log( this.search.img)
     if (this.search.img) {
         localStorage.setItem('imgUrl', this.search.img);
       
     } else  {
       this.search.img = localStorage.getItem('imgUrl') || '';
     }
-    console.log(this.search.img)
+    // console.log(this.search.img)
   }
 
 }
