@@ -1,5 +1,4 @@
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  query = {id = ":id"}
   status = 200
