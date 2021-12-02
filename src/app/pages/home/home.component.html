@@ -13,7 +13,11 @@
 
 
 <section class="section-bg">
-    <img src="/assets/images/bg-eating.jpg" alt="banner" class="section-bg__img">
+    <img
+      src="/assets/images/bg-eating.jpg"
+      loading="lazy"
+      alt="banner"
+      class="section-bg__img">
     <div class="section-bg__info">
         <h2 class="section-bg__title">
             Choose from thousands of recipes
@@ -34,25 +38,4 @@
         View More
     </a>
 </section>
-
-<!-- <div class="wrapper">
-    <section class="section-area">
-        <h2 class="section__title">Recipes by Country</h2>
-        <p class="section__subtitle">Choose a country and discover different recipes</p>
-    
-        <ul class="section__areas__list"
-           >
-            <li class="section__areas__item"
-            *ngFor="let area of areas | slice:0:12;">
-                <a href="#" class="section__areas__link">
-                    <img src="/assets/areas/{{ area.strArea }}.png" alt="American"  class="section__areas__img">
-                    {{ area.strArea }}
-                </a>
-            </li>
-        </ul>
-        <a href="#" class="section__btn">
-            View More
-        </a>
-    </section>
-</div> -->
 

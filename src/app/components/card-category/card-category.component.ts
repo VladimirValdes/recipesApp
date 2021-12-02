@@ -21,14 +21,25 @@ export class CardCategoryComponent implements OnInit {
                private router: Router) { }
 
   ngOnInit(): void {
-    this.recipesService.getAllCategories().subscribe( categories => {
 
-      if ( this.showOnly ==  0 ) {
-        this.showOnly = categories.length;
-        
-      }
-      this.categories = categories;
-    })
+    if ( this.recipesService.categories.length > 0 ) {
+      this.categories = this.recipesService.categories;
+    } else {
+      this.recipesService.getAllCategories().subscribe( categories => {
+
+        if ( this.showOnly ==  0 ) {
+          this.showOnly = categories.length;
+          
+        }
+        this.categories = categories;
+      })
+    }
+
+    if ( this.showOnly ==  0 ) {
+      this.showOnly = this.categories.length;  
+    }
+
+    
   }
 
   recipesBy( category: Category ) {

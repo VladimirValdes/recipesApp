@@ -53,3 +53,50 @@
     }
 
 }
+
+.placeholder {
+    background-color: #ccc;
+
+    animation-name: placeholder;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    
+    &__text {
+        background-color: #eee;
+        width: 90%;
+        height: 30px;
+       
+
+        &--sub {
+            width: 50%;
+        }
+    }
+}
+
+@keyframes placeholder {
+    0%{
+        background-color: #ccc;
+    }
+
+    50%{
+        background-color: #eee;
+    }
+
+    100%{
+        background-color: #ccc;
+    }
+} 
+
+@keyframes placeholderText {
+    0%{
+        background-color: #eee;
+    }
+
+    50%{
+        background-color: #ccc;
+    }
+
+    100%{
+        background-color: #eee;
+    }
+} 

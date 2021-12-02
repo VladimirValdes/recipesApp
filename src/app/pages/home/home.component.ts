@@ -22,9 +22,16 @@ export class HomeComponent implements OnInit {
   constructor(private recipeService: RecipesServiceService) { }
 
   ngOnInit(): void {
-    this.recipeService.filterByLetter().subscribe( recipes => {
-      this.recipes = recipes;
-    })
+
+    if ( this.recipeService.recipesByL.length > 0) {
+      this.recipes = this.recipeService.recipesByL;
+
+    } else {
+      this.recipeService.filterByLetter().subscribe( recipes => {
+        this.recipes = recipes;
+      })
+    }
+   
 
     
   }

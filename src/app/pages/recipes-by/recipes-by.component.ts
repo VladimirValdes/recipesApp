@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Category } from 'src/app/models/category.model';
 import { RecipesServiceService } from 'src/app/services/recipes-service.service';
 
 @Component({
@@ -53,7 +52,6 @@ export class RecipesByComponent implements OnInit {
           if (this.recipesService.ingredient !== undefined) {
             this.search.img = `https://www.themealdb.com/images/ingredients/${ this.recipesService.ingredient.strIngredient }.png` || '';
           }
-            // console.log( this.recipesService.ingredient.strIngredient)
 
             break;
           case 'country':

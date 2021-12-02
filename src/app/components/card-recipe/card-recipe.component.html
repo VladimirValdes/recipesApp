@@ -2,7 +2,11 @@
     <article class="recipe"
         *ngFor="let recipe of recipes"
         (click)="showRecipe( recipe.idMeal)">
-        <img [src]="recipe.strMealThumb" [alt]="recipe.strMeal" class="recipe__img">
+       <img
+          [src]="recipe.strMealThumb"
+          [alt]="recipe.strMeal"
+          loading="lazy"
+          class="recipe__img">
         <section class="recipe__info">
             <a href="#" class="recipe__category">
                 <span class="recipe__icon"></span>

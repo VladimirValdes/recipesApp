@@ -24,7 +24,11 @@
                 <a 
                   (click)="recipesBy( area )"
                   class="section__areas__link">
-                    <img src="/assets/areas/{{ area.strArea }}.png" alt="American"  class="section__areas__img">
+                   <img
+                      src="/assets/areas/{{ area.strArea }}.png"
+                      [alt]="area.strArea"
+                      loading="lazy"
+                      class="section__areas__img">
                     {{ area.strArea }}
                 </a>
             </li>

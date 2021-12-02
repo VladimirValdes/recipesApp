@@ -3,15 +3,16 @@
     [ngClass]="{'header--active': activeM}">
     <nav class="navbar">
 
-        <a  
-            class="brand"
-            [ngClass]="{'brand--active': activeM}">
+        <a class="brand"
+           routerLink="/home">
             Tasty Recipes
         </a>
 
         <button 
              class="icon-menu"
-             (click)="activeMenu()">
+             (click)="activeMenu()"
+             #iconM>
+             
             <span
                 class="icon-menu__bar"
                 [ngClass]="{'icon-menu__bar--active': activeM}">
@@ -21,11 +22,15 @@
         <ul 
             class="menu"
             [ngClass]="{'menu--active': activeM}">
-            <li class="menu__item"><a routerLink='/home' routerLinkActive="menu__link--active" class="menu__link">Home</a></li>
-            <li class="menu__item"><a routerLink="/discover" routerLinkActive="menu__link--active" class="menu__link">Discover</a></li>
-            <li class="menu__item"><a routerLink="/categories" routerLinkActive="menu__link--active" class="menu__link">Categories</a></li>
-            <li class="menu__item"><a routerLink="/recipes" routerLinkActive="menu__link--active" class="menu__link">Recipes</a></li>
-
+           <li
+              *ngFor="let opt of menu"
+              class="menu__item">
+              <a [routerLink]='opt'
+                 routerLinkActive="menu__link--active"
+                 (click)="activeMenu()"
+                class="menu__link">{{ opt | titlecase }}</a>
+            </li>
+          
         </ul>
 
     </nav>

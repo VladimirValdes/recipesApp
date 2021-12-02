@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-banner-per-page',
@@ -7,12 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BannerPerPageComponent implements OnInit {
 
+  // @ViewChild('asImage') image!: ElementRef;
+
   @Input() banner = {
     title: '',
     desc: ''
   }
 
-  constructor() { }
+  constructor( private renderer2: Renderer2) { }
 
   ngOnInit(): void {
   }

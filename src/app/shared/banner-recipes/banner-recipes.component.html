@@ -1,7 +1,11 @@
 <section class="banner">
 
     <div class="banner__imgContainer">
-        <img [src]="search.img" alt="banner" class="banner__img">
+        <img
+          [src]="search.img"
+          loading="lazy"
+          alt="banner"
+          class="banner__img">
     </div>
     <article class="banner__info">
         <h1 class="banner__title">Recipes by {{ search.searchBy }}:<span>{{ search.term }}</span></h1>

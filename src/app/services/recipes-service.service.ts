@@ -13,11 +13,15 @@ import { FilterRecipe, Meal as MealF } from '../interfaces/recipesBy.interface';
 })
 export class RecipesServiceService {
 
-  areas: Meal[] = [];
-  ingredients: MealI[] = [];
   category!: Category;
   ingredient!: MealI;
   area!: Meal;
+  requestFinis = false;
+  
+  categories: Category[] = [];
+  ingredients: MealI[] = [];
+  areas: Meal[] = [];
+  recipesByL: MealR[] = [];
 
   baseUrl = 'https://www.themealdb.com/api/json/v1/1';
 
@@ -27,6 +31,7 @@ export class RecipesServiceService {
       return this.http.get< Categories >(`${ this.baseUrl}/categories.php`)
                       .pipe(
                           map( categories  => {
+                            this.categories = categories.categories;
                              return categories.categories;
                           })
                       )
@@ -56,7 +61,6 @@ export class RecipesServiceService {
     return this.http.get< Recipes >(`${ this.baseUrl}/lookup.php?i=${ id }`)
                     .pipe(
                         map( recipe  => {
-                          // this.ingredients = recipe;
                           return recipe.meals[0];
                         })
                     )
@@ -66,7 +70,9 @@ export class RecipesServiceService {
     return this.http.get< Recipes >(`${ this.baseUrl}/search.php?f=${ term }`)
                       .pipe(
                           map( recipe  => {
+                            this.recipesByL = recipe.meals;
                              return recipe.meals;
+                        
                           })
                       )
   }
@@ -85,8 +91,6 @@ export class RecipesServiceService {
     return this.http.get< FilterRecipe >(`${ this.baseUrl}/filter.php?c=${term}`)
                       .pipe(
                           map( recipe  => {
-                            console.log( recipe )
-
                              return recipe.meals;
                           })
                       )

@@ -27,7 +27,8 @@
             <a class="ingredients__link"
                 (click)="recipesBy( ingredient )">
                 <img src="https://www.themealdb.com/images/ingredients/{{ ingredient.strIngredient }}.png" 
-                     [alt]="ingredient.strIngredient"  
+                     [alt]="ingredient.strIngredient"
+                     loading="lazy" 
                      class="ingredients__img">
                      {{ ingredient.strIngredient }}
             </a>

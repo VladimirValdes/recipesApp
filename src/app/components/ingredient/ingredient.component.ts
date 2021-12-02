@@ -20,9 +20,16 @@ export class IngredientComponent implements OnInit {
                private router: Router) { }
 
   ngOnInit(): void {
-    this.recipeService.getAllIngredients().subscribe( ingredients => {
-        this.ingredients = ingredients.slice(0,8);
+
+    if (this.recipeService.ingredients.length > 0) {
+        this.ingredients = this.recipeService.ingredients;
+
+    } else {
+      this.recipeService.getAllIngredients().subscribe( ingredients => {
+        this.ingredients = ingredients;
     })
+    }
+    
   }
 
   recipesBy( ingredient: Meal ) {

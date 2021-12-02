@@ -23,9 +23,16 @@ export class DiscoverComponent implements OnInit {
                private router: Router) { }
 
   ngOnInit(): void {
-    this.recipeServices.getAllArea().subscribe( areas => {
-      this.areas = areas.filter( a => a.strArea !== 'Unknown');
-    });
+
+    if ( this.recipeServices.areas.length > 0) {
+        this.areas = this.recipeServices.areas;
+
+    } else {
+      this.recipeServices.getAllArea().subscribe( areas => {
+        this.areas = areas.filter( a => a.strArea !== 'Unknown');
+      });
+    }
+   
   }
 
   recipesBy( area: Meal ) {
