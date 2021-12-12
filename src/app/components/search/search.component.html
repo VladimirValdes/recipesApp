@@ -1,6 +1,8 @@
 <section class="recipes">
     <form class="search-input"
-    >
+    [formGroup]="searchForm"
+    (ngSubmit)="search()"
+    autocomplete="off">
   
     <span class="search-input__icon">
   
@@ -12,8 +14,7 @@
        name="search-input"
        placeholder="Search for recipes..."
        aria-label="Search"
-       #term
-       (keyup)="search( term.value)">
+       formControlName="search">
      
   </form>
 </section>

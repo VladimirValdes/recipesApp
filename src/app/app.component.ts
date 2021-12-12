@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, Renderer2  } from '@angular/core';
 import { ActivationEnd, Event, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
@@ -8,13 +8,14 @@ import { filter, map } from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit{
   title = 'recipesApp';
   
   routeName: string = '';
   tituloSubs$: Subscription;
 
-  constructor( private route: Router) {
+  constructor( private route: Router,
+               private renderer: Renderer2) {
     this.tituloSubs$ =  this.getArgumentosRutas()
                             .subscribe( ( { title }) => {
                               this.routeName = title;
@@ -22,6 +23,11 @@ export class AppComponent {
                             });
 
   }
+  ngAfterViewInit(): void {
+    let loader = this.renderer.selectRootElement('#loader');
+    this.renderer.setStyle(loader, 'display', 'none');
+  }
+
 
   getArgumentosRutas() {
     return this.route.events
@@ -38,7 +44,7 @@ export class AppComponent {
 
 
   onActive( event: Event ) {
-    // console.log(event)
     window.scroll(0,0);
   }
+
 }

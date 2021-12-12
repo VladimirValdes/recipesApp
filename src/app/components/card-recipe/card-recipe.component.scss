@@ -100,90 +100,50 @@
 }
 
 
+.placeholder {
+    background-color: #ccc;
 
-
-// .recipe {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: center;
-//     border: 1px solid var(--pf-primary-color);
-//     border-radius: 10px;
-//     overflow: hidden;
-//     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-
-//     &__img {
-//         flex: 1 0 175px;
-//         width: 100%;
-//         height: auto;
-//         object-fit: cover;
-//         object-position: center;
-//     }
-
-//     &__info {
-//         flex: 1 0 200px;
-//         display: flex;
-//         flex-direction: column;
-//         padding: 0 1rem;
-//     }
-
+    animation-name: placeholder;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
     
-//     &__name {
-//         font-size: var(--pf-fs-600);
-//         font-weight: var(--pf-font-weight-lg);
-//         color: var(--pf-tertiary-color);
-//         margin-bottom: 0;
-//     }
+    &__img {
+        background-color: #eee;
+        width: 300px;
+        height: 300px;
+    }
 
-//     &__tags {
-//         display: flex;
-//         flex-wrap: wrap;
-//         align-content: center;
-//         justify-content: center;
-//         padding-left: 0;
-//     }
+    &__title {
+        background-color: #eee;
+        width: 100px;
+        height: 30px;
+    }
+}
 
-//     &__tag {
-//         font-size: var(--pf-fs-400);
-//         font-weight: var(--pf-font-weight-sm);
-//         color: var(--pf-bg-color);
-//         margin-bottom: 0;
-//         margin-top: 0;
-//         padding: 0.5rem 1rem;
-//         background-color: var(--pf-highlight-color);
-//         text-align: center;
-//         border-radius: 25px;
-//         margin-right: 0.5rem;
-//     }
+@keyframes placeholder {
+    0%{
+        background-color: #ccc;
+    }
 
-//     &__desc {
-//         font-size: var(--pf-fs-500);
-//         font-weight: var(--pf-font-weight-sm);
-//         color: var(--pf-primary-color);
-//         margin-bottom: 0;
-//         margin-top: 0;
-//     }
+    50%{
+        background-color: #eee;
+    }
 
-//     &__video {
-//         display: flex;
-//         align-items: center;
-//         font-size: var(--pf-fs-500);
-//         font-weight: var(--pf-font-weight-sm);
-//         color: var(--pf-primary-color);
-//         padding: 1.5rem;
-//         text-decoration: none;
-//         border-top: 1px solid var(--pf-primary-color);
-//     }
+    100%{
+        background-color: #ccc;
+    }
+} 
 
-//     &__icon {
-//         display: inline-block;
-//         width: 30px;
-//         height: 30px;
-//         margin-right: 0.5rem;
-//         background-image: url('/assets/images/video-tutorial.png');
-//         background-position: center;
-//         background-repeat: no-repeat;
-//         background-size: contain;
-//     }
+@keyframes placeholderText {
+    0%{
+        background-color: #eee;
+    }
 
+    50%{
+        background-color: #ccc;
+    }
 
-// }
+    100%{
+        background-color: #eee;
+    }
+} 

@@ -131,19 +131,7 @@
 
 .recipe {
 
-    &__steps {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        max-width: 1124px;
-        margin: 0 auto;
-        padding: 1rem 1.5rem;
-
-     
-    }
-
+    
     &__ingredients {
         
         width: 100%;
@@ -171,6 +159,7 @@
             padding-bottom: 56.25%; /* 16:9 */
             padding-top: 50px;
             height: 0;
+            margin-top: 3rem;
 
             iframe {
                 position: absolute;
@@ -184,10 +173,24 @@
         }
     }
 
-    &__elaboration__step {
+    &__instructions {
+        padding: 1rem;
+    }
+
+   
+
+    &__title-step {
+        margin-bottom: 0.5rem;
+        font-size: var(--pf-fs-500);
+        font-weight: var(--pf-font-weight-md);
+        color: var(--pf-tertiary-color);
+    }
+
+    &__step {
         font-size: var(--pf-fs-500);
         font-weight: var(--pf-font-weight-xsm);
         color: var(--pf-primary-color);
+        margin: 0;
     }
 
     &__tags {

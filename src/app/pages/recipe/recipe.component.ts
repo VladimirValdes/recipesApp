@@ -20,6 +20,7 @@ export class RecipeComponent implements OnInit {
   showI = true;
   showInstructions = false;
   recipeImage = '';
+  instructions: string[] = [];
 
   constructor( private recipeService: RecipesServiceService,
                private activatedRouter: ActivatedRoute,
@@ -39,6 +40,7 @@ export class RecipeComponent implements OnInit {
 
         this.recipe = recipe;
         this.getIngredients( this.recipe );
+        this.getInstructions( this.recipe.strInstructions);
         this.getVideo( this.recipe.strYoutube );
         this.getTags( this.recipe.strTags );
       
@@ -67,9 +69,6 @@ export class RecipeComponent implements OnInit {
           this.measures.push( recipe[key] )
         }
       }
-
-      
-
     });
 
     
@@ -87,6 +86,13 @@ export class RecipeComponent implements OnInit {
     const [, idvideo ] = video.split('=');
     this.video = `https://www.youtube.com/embed/${ idvideo }`;
 
+  }
+
+  getInstructions( instructions: string ) {
+    this.instructions = instructions.split('.');
+
+    console.log( this.instructions );
+    
   }
 
   show( value: boolean ) {
